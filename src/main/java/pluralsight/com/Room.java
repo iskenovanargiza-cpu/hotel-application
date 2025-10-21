@@ -3,10 +3,9 @@ package pluralsight.com;
 public class Room {
     private int numberOfBeds;
     private double price;
-    private boolean isOccupied;
-    private boolean isDirty;
+    private boolean isOccupied, isDirty;
 
-    public Room(int numberOfBeds, double price, boolean isOccupied, boolean isDirty, boolean isOAvailable) {
+    public Room(int numberOfBeds, double price, boolean isOccupied, boolean isDirty, boolean isAvailable) {
         this.numberOfBeds = numberOfBeds;
         this.price = price;
         this.isOccupied = isOccupied;
@@ -22,15 +21,27 @@ public class Room {
     }
 
     public boolean isOccupied() {
-        return isOccupied = false;
+        return isOccupied;
     }
 
     public boolean isDirty() {
-        return isDirty = false;
+        return isDirty;
     }
 
     public boolean isAvailable() {
-        if (false == isOccupied) && if(isDirty == false) {
-            return true;
+        return (!this.isOccupied && !this.isDirty);
     }
-}}
+
+    public void checkIn() {
+        boolean b = this.isOccupied && this.isDirty;
+    }
+
+    public boolean checkout() {
+        return (!this.isDirty && !this.isOccupied);
+    }
+
+    public boolean cleanRoom() {
+        return (!this.isDirty);
+
+    }
+}
