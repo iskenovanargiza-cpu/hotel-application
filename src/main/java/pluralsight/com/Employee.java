@@ -2,14 +2,14 @@ package pluralsight.com;
 
 public class Employee {
     private int employeeId;
-    private String named;
+    private String name;
     private String department;
     private double payRate;
     private double hoursWorked;
 
-    public Employee(int employeeId, String named, String department, double payRate, int hoursWorked) {
+    public Employee(int employeeId, String name, String department, double payRate, int hoursWorked) {
         this.employeeId = employeeId;
-        this.named = named;
+        this.name = name;
         this.department = department;
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
@@ -20,7 +20,7 @@ public class Employee {
     }
 
     public String getNamed() {
-        return named;
+        return name;
     }
 
     public String getDepartment() {
@@ -36,17 +36,18 @@ public class Employee {
     }
 
     public double getTotalPay() {
-        (double regularHours * payRate) +(double overtimeHours * payRate *1.5);
+        return getRegularHours() + getOvertimeHours();
 
     }
     public double getRegularHours() {
-        if (hoursWorked > 40) {
-            double regularHours = 40;
-        }}
+        if (hoursWorked < 40) && if (hoursWorked > 40) {
+            return 40; }
+    }
+
     public double getOvertimeHours() {
         if (hoursWorked > 40) {
             double regularHours = 40;
-            double overtimeHours = hoursWorked - regularHours;
+            return hoursWorked - regularHours;
             }
-        }
-}
+
+}}
